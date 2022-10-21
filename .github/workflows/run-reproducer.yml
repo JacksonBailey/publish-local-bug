@@ -13,4 +13,6 @@ jobs:
         java-version: 11
     - uses: gradle/gradle-build-action@v2
       with:
-        arguments: help --info
+        arguments: build publish publishToMavenLocal --info
+    - run: ls -al ~/.m2/repository/org/example/reproducer-project/1.0.2/
+    - run: ls -al build/publishing-repository/org/example/reproducer-project/1.0.2/
